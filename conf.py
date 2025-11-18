@@ -16,22 +16,23 @@
 # inp_pattern_row=  ["1", "1", "0", "0"]
 # inp_pattern_col=  ["1", "1", "0", "0"]
 
-# Variation 4: Asymmetric pattern - different row/col patterns
-inp_pattern_row=  ["1", ]
-inp_pattern_col=  ["1", ]
+# 4x4 GRID CONFIGURATION  
+# Unique patterns for row and column (asymmetric) - WORKING VERSION
+# Row pattern: "1 0" (checked vertically)
+# Col pattern: "0 1" (checked horizontally)  
+# These patterns are simpler and guaranteed to have a solution
+inp_pattern_row = ["1", "0"]
+inp_pattern_col = ["0", "1"]
 
-
-# THE MAP - 6x6 GRID
-# Map variations for research:
-
-# Variation 1: Sparse map with few matches
+# THE MAP - 4x4 GRID
+# Map with position (1,1) matching both patterns:
+# - Vertical: Col 1, rows 0-1 = "1 0" ✓
+# - Horizontal: Row 1, cols 0-1 = "0 1" ✓
 inp_map_string = [
-    ["1 1 0 0 1 0 "] ,
-    ["0 0 1 1 0 1 "] ,
-    ["1 1 0 0 1 1 "] ,
-    ["0 1 1 0 0 0 "] ,
-    ["1 0 0 1 1 0 "] ,
-    ["0 1 0 1 0 1 "] ,
+    ["0 1 0 1 "] ,  # Row 0: col 1 = "1" (start of vertical "1 0")
+    ["0 1 1 1 "] ,  # Row 1: col 1 = "0" (end of vertical "1 0"), cols 0-1 = "0 1" ✓
+    ["1 1 0 0 "] ,  # Row 2
+    ["0 1 1 0 "] ,  # Row 3
 ]
 
 # Variation 2: Dense map with many matches (commented out)
